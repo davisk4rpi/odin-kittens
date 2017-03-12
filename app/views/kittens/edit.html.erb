@@ -2,3 +2,6 @@
 <% provide(:button_text, "Save updates") %>
 <h1>Upgrade this Kitten</h1>
 <%= render 'kittens/form' %>
+<%= form_for @kitten, html: { method: :delete } do |f| %>
+  <%= f.submit "Kill this kitten" %>
+<% end %>

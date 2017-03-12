@@ -4,5 +4,5 @@
 <h3>Softness: <%= @kitten.softness %></h3>
 <%= link_to "Edit", edit_kitten_path %>
 <%= form_for @kitten, html: { method: :delete } do |f| %>
-  <%= f.submit "Kill" %>
+  <%= f.submit "Kill this kitten" %>
 <% end %>

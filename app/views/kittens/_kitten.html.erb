@@ -3,4 +3,7 @@
   Age: <%= kitten.age %><br>
   Cuteness: <%= kitten.cuteness %><br>
   Softness: <%= kitten.softness %>
+  <%= form_for kitten, html: { method: :delete } do |f| %>
+    <%= f.submit "Kill this kitten" %>
+  <% end %>
 </li>
