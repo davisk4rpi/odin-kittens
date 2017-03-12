@@ -1,3 +1,6 @@
-Index
-
 <%= link_to "Add New Kitten", new_kitten_path %>
+
+<h2>All Kittens</h2>
+<ol class="kittens">
+   <%= render @kittens %>
+</ol>
