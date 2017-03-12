@@ -1,17 +1,4 @@
+<% provide(:form_path, kittens_path) %>
+<% provide(:button_text, "Save this lil guy!") %>
 <h1>Add a new Kitten</h1>
-<%= form_for @kitten, url: kittens_path do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-
-  <%= f.label :cuteness %>
-  <%= f.text_field :cuteness %>
-
-  <%= f.label :softness %>
-  <%= f.text_field :softness %>
-
-  <%= f.submit %>
-
-<% end %>
+<%= render 'kittens/form' %>

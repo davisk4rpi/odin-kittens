@@ -2,3 +2,7 @@
 <h3>Age: <%= @kitten.age %></h3>
 <h3>Cuteness: <%= @kitten.cuteness %></h3>
 <h3>Softness: <%= @kitten.softness %></h3>
+<%= link_to "Edit", edit_kitten_path %>
+<%= form_for @kitten, html: { method: :delete } do |f| %>
+  <%= f.submit "Kill" %>
+<% end %>

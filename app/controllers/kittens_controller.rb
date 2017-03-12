@@ -28,12 +28,21 @@ class KittensController < ApplicationController
   end
 
   def update
-    @kitten = Kitten.new(kitten_params)
-    @kitten.save
+    @kitten = Kitten.find(params[:id])
+    @kitten.update_attributes(kitten_params)
+    if @kitten.save
+      flash[:success] = "Kitten Updated"
+      redirect_to kitten_path(@kitten)
+    else
+      flash.now[:danger] = "Everytime a field is filled out incorrectly, a " +
+                           "kitten gets put out on the street"
+      render :edit
+    end
   end
 
   def destroy
     Kitten.find(params[:id]).destroy
+    redirect_to root_url
   end
 
   private
